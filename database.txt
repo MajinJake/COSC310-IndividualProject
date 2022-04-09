@@ -143,3 +143,9 @@ I have a bird @ I love birds, I hope they make you happy.
 I have three birds @ I love birds, I hope they make you happy.
 Yes I do @ That is perfectly fine. What else would you like to talk about?
 No I do not @ That is perfectly fine. What else would you like to talk about?
+I have nothing to do @ Maybe I can help. Would you like to read any of these news articles?
+What is soccer @ Here is a summary from wikipedia. Would you like to read it?
+What is rock climbing @ Here is a summary from wikipedia. Would you like to read it?
+What is YouTube @ Here is a summary from wikipedia. Would you like to read it?
+What is loneliness @ Here is a summary from wikipedia. Would you like to read it?
+What is happiness @ Here is a summary from wikipedia. Would you like to read it?

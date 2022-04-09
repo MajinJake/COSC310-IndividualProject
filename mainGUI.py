@@ -11,6 +11,8 @@ from SentencePOSTagger import SentencePOSTagger
 import spacy_universal_sentence_encoder
 #Import tkinter to create the GUI
 import tkinter as tk
+import BingNewsAPI as Bing
+import WikipediaAPI as Wiki
 
 databaseInList = DatabaseToList.database_to_list()
 nlp = spacy_universal_sentence_encoder.load_model('en_use_md')
@@ -132,7 +134,20 @@ class mainGUI:
                     self.messageLog.append(["I am sorry, I cannot understand that sentence. Could you say it a little more simply please?","bot"])
                 else:
                     if "?" in botAnswer:
-                        self.messageLog.append([f"{botAnswer}","bot"])
+                        splitSentence = userInputSentence.split(" ")
+                        if userInputSentence == "I have nothing to do":
+                            self.messageLog.append([f"{botAnswer}" + "\n", "bot"])
+                            headlines = Bing.BingNews.headlines(self)
+                            for headline in headlines:
+                                self.messageLog.append([f"{headline}" + "\n", "bot"])
+                        elif splitSentence[0] == "What" and splitSentence[1] == "is":
+                            splitTopic = splitSentence[2:]
+                            topic = ' '.join(splitTopic)
+                            wikiPage = Wiki.wikipediaAPI.wikiPage(topic)
+                            self.messageLog.append([f"{botAnswer}" + "\n", "bot"])
+                            self.messageLog.append([f"{wikiPage}", "bot"])
+                        else:
+                            self.messageLog.append([f"{botAnswer}", "bot"])
                     else:
                         question, self.questionsAsked = BotSentimentResponse.bot_sentiment_response(userInputSentence, self.questionsAsked)
                         print(f"Bot: {botAnswer} {question}")
@@ -141,6 +156,7 @@ class mainGUI:
                 print(f"POS tags: {SentencePOSTagger.sentence_pos_tagger(userInputSentence)}")
                 print(f"Highest Value: {correctnessValue}")
                 print(f"Questions Asked: {self.questionsAsked}")
+
                 correctnessValue = 0
 
     #Function to close the window

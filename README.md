@@ -1,5 +1,8 @@
 # Introduction
-This project's objective is to create a conversational agent that carries on a conversation with the user by responding to user’s input with prompts and questions. The role of the conversational agent that we have created is to act as a therapist that specializes in loneliness. So as you are using this program, try to stay in the mindset of a patient at a therapist’s office to bring out the most of the program's functionality.
+The purpose of this project is to create a psychiatrist chatbot on the topic of loneliness.The critical requirement of the chatbot is to "discuss" loneliness, as a psychiatrist would, in written text. The first interaction with the chatbot consists of an exchange of greeting messages between the chatbot and user. Then, the chatbot will ask the user how they feel or what their concerns are. All subsequent responses from the user will revolve around their concerns regarding the topic of loneliness. The chatbot agent will reply to the user’s responses accordingly and ask questions to continue and/or deepen the conversation with the user, much like a psychiatrist would in a real-life setting.
+
+The chatbot merely needs to emulate an understanding of written English. To achieve the said requirement, a database of pre-defined sentences (prompts) will be created, with corresponding sentences (answers). With the said database, a software system will be created that compares the similarity of the user's input sentence with each prompt in the database. The prompt that is most similar to the user's input sentence will be identified, and the said prompt's answer will be outputted or a message stating the user to re-enter the sentence.
+
 
 # What's New
 In order to improve the chatbot experience, the following features have been implemented:
